@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+input, select, textarea { @apply border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 rounded px-3 py-2 w-full; }
+button { @apply rounded px-3 py-2 transition; }
+main, section { @apply dark:bg-slate-900 dark:border-slate-800; }
+a { @apply transition; }

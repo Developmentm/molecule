@@ -1,0 +1,13 @@
+{
+  "name": "molecule-platform",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "build": "npm run build -w @molecule/backend && npm run build -w @molecule/frontend",
+    "dev": "concurrently \"npm run dev -w @molecule/backend\" \"npm run dev -w @molecule/frontend\"",
+    "seed": "npm run seed -w @molecule/backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

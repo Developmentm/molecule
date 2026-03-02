@@ -1,0 +1,215 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CLIENT
+  PM
+  DEVELOPER
+  FINANCE
+  ADMIN
+}
+
+enum WorkflowStatus {
+  lead
+  requirement_received
+  scoping
+  quotation_sent
+  quotation_accepted
+  invoice_sent
+  payment_pending
+  receipt_uploaded
+  payment_verified
+  milestones_created
+  in_progress
+  review
+  completed
+}
+
+model users {
+  id            String          @id @default(cuid())
+  email         String          @unique
+  password      String
+  name          String
+  role          Role
+  status        String          @default("active")
+  companyId     String?
+  company       companies?      @relation(fields: [companyId], references: [id])
+  projects      projects[]      @relation("ProjectClient")
+  tasks         tasks[]         @relation("TaskAssignee")
+  notifications notifications[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+}
+
+model companies {
+  id           String         @id @default(cuid())
+  name         String
+  status       String         @default("active")
+  users        users[]
+  requirements requirements[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model requirements {
+  id          String         @id @default(cuid())
+  title       String
+  description String
+  budgetRange String
+  deadline    DateTime
+  priority    String
+  status      String         @default("new")
+  workflow    WorkflowStatus @default(requirement_received)
+  companyId   String
+  company     companies      @relation(fields: [companyId], references: [id])
+  files       files[]
+  chats       chats[]
+  quotation   quotations?
+  vectors     vectors[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model chats {
+  id            String       @id @default(cuid())
+  requirementId String
+  requirement   requirements @relation(fields: [requirementId], references: [id])
+  role          String
+  message       String
+  status        String       @default("active")
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model quotations {
+  id            String       @id @default(cuid())
+  requirementId String       @unique
+  requirement   requirements @relation(fields: [requirementId], references: [id])
+  lineItems     Json
+  total         Float
+  status        String       @default("Draft")
+  invoice       invoices?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model invoices {
+  id             String      @id @default(cuid())
+  quotationId    String      @unique
+  quotation      quotations  @relation(fields: [quotationId], references: [id])
+  invoiceNumber  String      @unique
+  amount         Float
+  status         String      @default("Sent")
+  receipt        receipts?
+  project        projects?
+  transactionRef String?
+  financeNote    String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model receipts {
+  id              String    @id @default(cuid())
+  invoiceId        String    @unique
+  invoice          invoices  @relation(fields: [invoiceId], references: [id])
+  fileUrl          String
+  referenceNumber  String
+  status           String    @default("Uploaded")
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model projects {
+  id         String      @id @default(cuid())
+  name       String
+  invoiceId  String      @unique
+  invoice    invoices    @relation(fields: [invoiceId], references: [id])
+  clientId   String
+  client     users       @relation("ProjectClient", fields: [clientId], references: [id])
+  status     String      @default("Not Started")
+  progress   Int         @default(0)
+  milestones milestones[]
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+}
+
+model milestones {
+  id        String    @id @default(cuid())
+  projectId String
+  project   projects  @relation(fields: [projectId], references: [id])
+  title     String
+  dueDate   DateTime
+  status    String    @default("Not Started")
+  tasks     tasks[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model tasks {
+  id           String    @id @default(cuid())
+  milestoneId  String
+  milestone    milestones @relation(fields: [milestoneId], references: [id])
+  assigneeId   String?
+  assignee     users?    @relation("TaskAssignee", fields: [assigneeId], references: [id])
+  title        String
+  description  String
+  timeLogHours Float     @default(0)
+  status       String    @default("Not Started")
+  files        files[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model files {
+  id            String       @id @default(cuid())
+  url           String
+  name          String
+  status        String       @default("active")
+  requirementId String?
+  requirement   requirements? @relation(fields: [requirementId], references: [id])
+  taskId        String?
+  task          tasks?       @relation(fields: [taskId], references: [id])
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model activity_logs {
+  id         String   @id @default(cuid())
+  actorId    String
+  action     String
+  entityType String
+  entityId   String
+  metadata   Json?
+  status     String   @default("logged")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model notifications {
+  id        String   @id @default(cuid())
+  userId    String
+  user      users    @relation(fields: [userId], references: [id])
+  title     String
+  body      String
+  read      Boolean  @default(false)
+  status    String   @default("new")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model vectors {
+  id            String       @id @default(cuid())
+  requirementId String
+  requirement   requirements @relation(fields: [requirementId], references: [id])
+  embedding     Json
+  content       String
+  status        String       @default("active")
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
