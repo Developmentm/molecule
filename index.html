@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Development Molecule | Custom Software, AI &amp; Digital Growth</title>
+  <meta name="description" content="Development Molecule builds custom software, AI-powered solutions and digital growth strategies for businesses in India, the USA, UK, Canada and Germany. Established 2018.">
+  <meta property="og:title" content="Development Molecule | Custom Software, AI &amp; Digital Growth">
+  <meta property="og:description" content="Development Molecule builds custom software, AI-powered solutions and digital growth strategies for businesses in India, the USA, UK, Canada and Germany. Established 2018.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+  <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="icon-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
+  <symbol id="icon-brain-circuit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.5 6.12"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r="0.5"/><circle cx="18" cy="3" r="0.5"/><circle cx="20" cy="21" r="0.5"/><circle cx="20" cy="8" r="0.5"/></symbol>
+  <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="icon-line-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+  <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="icon-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="icon-boxes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></symbol>
+  <symbol id="icon-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></symbol>
+  <symbol id="icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+</svg>
+
+<!-- ========= HEADER ========= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" aria-label="Development Molecule home">
+      <img src="images/logo-development-molecule.png" alt="Development Molecule logo" width="1200" height="282">
+    </a>
+    <nav class="desktop-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <div class="services-dropdown">
+        <a href="services.html" class="nav-link">Services <svg class="icon-sm"><use href="#icon-chevron-down"/></svg></a>
+        <div class="services-dropdown-menu">
+          <a href="services/custom-development.html">Custom Development</a>
+          <a href="services/ai-custom-development.html">AI + Custom Development</a>
+          <a href="services/ai-best-development.html">AI Based Development</a>
+          <a href="services/digital-marketing-solutions.html">Digital Marketing Solutions</a>
+          <a href="services/staff-augmentation.html">Staff Augmentation</a>
+          <a href="services/digital-transformation.html">Digital Transformation</a>
+          <a href="services/hardware-software-integration-iot.html">Hardware &amp; Software Integration (IoT)</a>
+        </div>
+      </div>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <a href="tel:+918169659377" class="header-phone">
+      <svg class="icon-md"><use href="#icon-phone"/></svg> +91 8169659377
+    </a>
+    <a href="contact.html" class="header-cta">
+      Get Free Consultation <svg class="icon-md"><use href="#icon-arrow-right"/></svg>
+    </a>
+    <button type="button" class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="24" height="24"><use href="#icon-menu"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <div class="mobile-sub">
+      <a href="services/custom-development.html">Custom Development</a>
+      <a href="services/ai-custom-development.html">AI + Custom Development</a>
+      <a href="services/ai-best-development.html">AI Based Development</a>
+      <a href="services/digital-marketing-solutions.html">Digital Marketing Solutions</a>
+      <a href="services/staff-augmentation.html">Staff Augmentation</a>
+      <a href="services/digital-transformation.html">Digital Transformation</a>
+      <a href="services/hardware-software-integration-iot.html">Hardware &amp; Software Integration (IoT)</a>
+    </div>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+918169659377" class="mobile-phone"><svg class="icon-md"><use href="#icon-phone"/></svg> +91 8169659377</a>
+    <a href="contact.html" class="mobile-cta">Get Free Consultation <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ========= HERO ========= -->
+  <section class="hero surface-navy">
+    <div aria-hidden="true" class="blob animate-drift" style="left:-6rem;top:6rem;width:18rem;height:18rem;background:rgba(47,180,201,0.25)"></div>
+    <div aria-hidden="true" class="blob animate-drift" style="right:-2.5rem;bottom:0;width:20rem;height:20rem;background:rgba(47,180,201,0.15);animation-delay:3s"></div>
+    <div class="hero-grid relative">
+      <div>
+        <div class="reveal">
+          <span class="hero-badge">
+            <svg class="icon-sm"><use href="#icon-award"/></svg> Technology partner since 2018
+          </span>
+        </div>
+        <div class="reveal" style="transition-delay:90ms">
+          <h1>We build custom software, <span class="text-gradient-accent">AI-powered solutions</span> and digital growth engines.</h1>
+        </div>
+        <div class="reveal" style="transition-delay:160ms">
+          <p class="hero-body">Development Molecule is a research-led engineering and digital services company delivering platforms, AI products and growth strategies for businesses worldwide.</p>
+        </div>
+        <div class="reveal" style="transition-delay:230ms">
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-accent">Get Free Consultation <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+            <a href="services.html" class="btn btn-outline">Explore Our Services</a>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:300ms">
+          <dl class="stats-row">
+            <div>
+              <dt class="stat-value">2018</dt>
+              <dd class="stat-label">Delivering since</dd>
+            </div>
+            <div>
+              <dt class="stat-value">5</dt>
+              <dd class="stat-label">Countries served</dd>
+            </div>
+            <div>
+              <dt class="stat-value">160 hrs</dt>
+              <dd class="stat-label">Dedicated capacity / month</dd>
+            </div>
+            <div>
+              <dt class="stat-value">12+</dt>
+              <dd class="stat-label">Industries served</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:140ms">
+        <div class="hero-image-wrapper">
+          <div class="hero-image animate-float-slow">
+            <img src="images/hero-tech.jpg" alt="Isometric illustration of AI models, code panels and connected molecule structures" width="1600" height="1200">
+          </div>
+          <div class="hero-float-card">
+            <p class="label">Global clients</p>
+            <p class="value">India · USA · UK · Canada · Germany</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= INDUSTRIES BAND ========= -->
+  <section class="industries-band">
+    <span class="eyebrow label">Industries served</span>
+    <span>Healthcare</span>
+    <span>Fintech</span>
+    <span>Logistics</span>
+    <span>Manufacturing</span>
+    <span>Real Estate</span>
+    <span>eCommerce</span>
+    <span>Education</span>
+    <span>Energy &amp; IoT</span>
+  </section>
+
+  <!-- ========= SERVICES ========= -->
+  <section class="section">
+    <div class="container">
+      <div style="display:flex;flex-direction:column;gap:2rem">
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem">
+          <div class="reveal">
+            <div class="section-heading">
+              <p class="eyebrow">What we do</p>
+              <h2>Engineering, AI and growth under one accountable roof</h2>
+              <p>Seven focused practices that take a business from idea and architecture through to launch, scale and measurable demand.</p>
+            </div>
+          </div>
+          <div class="reveal" style="transition-delay:120ms">
+            <a href="services.html" class="btn btn-primary btn-sm">View all services <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3 mt-14">
+        <div class="reveal">
+          <a href="services/custom-development.html" class="service-card hover-lift">
+            <div class="service-card-image"><img src="images/service-custom-development.jpg" alt="Custom Development illustration" loading="lazy" width="1200" height="900"></div>
+            <div class="service-card-body">
+              <h3>Custom Development</h3>
+              <p>Research-led web, mobile and platform engineering built around your exact business logic.</p>
+              <span class="learn-more">Learn more <svg class="icon-md"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+          </a>
+        </div>
+        <div class="reveal" style="transition-delay:60ms">
+          <a href="services/ai-custom-development.html" class="service-card hover-lift">
+            <div class="service-card-image"><img src="images/service-ai-development.jpg" alt="AI + Custom Development illustration" loading="lazy" width="1200" height="900"></div>
+            <div class="service-card-body">
+              <h3>AI + Custom Development</h3>
+              <p>Custom products with practical AI at the core — copilots, automation and intelligent workflows.</p>
+              <span class="learn-more">Learn more <svg class="icon-md"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+          </a>
+        </div>
+        <div class="reveal" style="transition-delay:120ms">
+          <a href="services/ai-best-development.html" class="service-card hover-lift">
+            <div class="service-card-image"><img src="images/service-ai-best.jpg" alt="AI Based Development illustration" loading="lazy" width="1200" height="900"></div>
+            <div class="service-card-body">
+              <h3>AI Based Development</h3>
+              <p>AI-accelerated engineering practice: faster delivery with enterprise-grade quality gates.</p>
+              <span class="learn-more">Learn more <svg class="icon-md"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+          </a>
+        </div>
+        <div class="reveal" style="transition-delay:180ms">
+          <a href="services/digital-marketing-solutions.html" class="service-card hover-lift">
+            <div class="service-card-image"><img src="images/service-digital-marketing.jpg" alt="Digital Marketing Solutions illustration" loading="lazy" width="1200" height="900"></div>
+            <div class="service-card-body">
+              <h3>Digital Marketing Solutions</h3>
+              <p>SEO, SMO, PPC, AEO and GEO programmes engineered for pipeline, not vanity metrics.</p>
+              <span class="learn-more">Learn more <svg class="icon-md"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+          </a>
+        </div>
+        <div class="reveal" style="transition-delay:240ms">
+          <a href="services/staff-augmentation.html" class="service-card hover-lift">
+            <div class="service-card-image"><img src="images/service-staff-augmentation.jpg" alt="Staff Augmentation illustration" loading="lazy" width="1200" height="900"></div>
+            <div class="service-card-body">
+              <h3>Staff Augmentation</h3>
+              <p>Full-time dedicated resources: 8 hours/day, 5 days/week, 160 hours a month.</p>
+              <span class="learn-more">Learn more <svg class="icon-md"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+          </a>
+        </div>
+        <div class="reveal" style="transition-delay:300ms">
+          <a href="services/digital-transformation.html" class="service-card hover-lift">
+            <div class="service-card-image"><img src="images/service-digital-transformation.jpg" alt="Digital Transformation illustration" loading="lazy" width="1200" height="900"></div>
+            <div class="service-card-body">
+              <h3>Digital Transformation</h3>
+              <p>Modernise legacy systems, automate operations and unlock the data you already own.</p>
+              <span class="learn-more">Learn more <svg class="icon-md"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+          </a>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <a href="services/hardware-software-integration-iot.html" class="service-card hover-lift">
+            <div class="service-card-image"><img src="images/service-iot.jpg" alt="Hardware &amp; Software Integration (IoT) illustration" loading="lazy" width="1200" height="900"></div>
+            <div class="service-card-body">
+              <h3>Hardware &amp; Software Integration (IoT)</h3>
+              <p>Connected devices, gateways, firmware and dashboards delivered as one system.</p>
+              <span class="learn-more">Learn more <svg class="icon-md"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= WHY US ========= -->
+  <section class="section bg-secondary-50">
+    <div class="container">
+      <div class="grid-12 items-center">
+        <div class="col-5 reveal">
+          <div class="img-rounded">
+            <img src="images/about-team.jpg" alt="Development Molecule engineers reviewing solution architecture on a whiteboard" loading="lazy" width="1400" height="900">
+          </div>
+        </div>
+        <div class="col-7">
+          <div class="reveal">
+            <div class="section-heading">
+              <p class="eyebrow">Why Development Molecule</p>
+              <h2>A partner that is accountable for the outcome</h2>
+              <p>We work as an embedded technology partner: fewer clients, senior teams, and delivery discipline you can audit week by week.</p>
+            </div>
+          </div>
+          <div class="grid-2 mt-10">
+            <div class="reveal">
+              <div class="feature-card">
+                <div class="icon-wrap"><svg><use href="#icon-brain-circuit"/></svg></div>
+                <h3>Research before code</h3>
+                <p>Every engagement starts with market, workflow and data research so the build solves the real constraint.</p>
+              </div>
+            </div>
+            <div class="reveal" style="transition-delay:80ms">
+              <div class="feature-card">
+                <div class="icon-wrap"><svg><use href="#icon-shield-check"/></svg></div>
+                <h3>Senior-only delivery</h3>
+                <p>Your architecture and reviews are owned by senior engineers — no junior hand-offs after the pitch.</p>
+              </div>
+            </div>
+            <div class="reveal" style="transition-delay:160ms">
+              <div class="feature-card">
+                <div class="icon-wrap"><svg><use href="#icon-line-chart"/></svg></div>
+                <h3>Measured on outcomes</h3>
+                <p>We report on cycle time, qualified leads and cost per outcome, not activity slides.</p>
+              </div>
+            </div>
+            <div class="reveal" style="transition-delay:240ms">
+              <div class="feature-card">
+                <div class="icon-wrap"><svg><use href="#icon-globe"/></svg></div>
+                <h3>Global delivery rhythm</h3>
+                <p>Working-hour overlap with the USA, UK, Canada and Germany with a single accountable point of contact.</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal mt-10" style="transition-delay:200ms">
+            <a href="about.html" class="btn btn-primary">Talk to an Expert <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= PROCESS ========= -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-heading center">
+          <p class="eyebrow">Our framework</p>
+          <h2>From first discussion to measurable scale</h2>
+          <p>A four-stage engagement framework that keeps scope, cost and communication predictable.</p>
+        </div>
+      </div>
+      <div class="grid-4 mt-14">
+        <div class="reveal">
+          <div class="process-card hover-lift">
+            <span class="step-num">01</span>
+            <h3>Discussion</h3>
+            <p>A structured consultation to understand the business outcome you need.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:80ms">
+          <div class="process-card hover-lift">
+            <span class="step-num">02</span>
+            <h3>Discovery</h3>
+            <p>Research, technical feasibility and a costed, milestone-based roadmap.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:160ms">
+          <div class="process-card hover-lift">
+            <span class="step-num">03</span>
+            <h3>Delivery</h3>
+            <p>Sprint-based build with weekly demos, QA gates and transparent reporting.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:240ms">
+          <div class="process-card hover-lift">
+            <span class="step-num">04</span>
+            <h3>Scale</h3>
+            <p>Optimisation, growth marketing and dedicated resources as you expand.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal mt-12 text-center" style="transition-delay:200ms">
+        <a href="contact.html" class="btn btn-accent">Get Your Business Report <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= GLOBAL FOOTPRINT ========= -->
+  <section class="section surface-navy global-section">
+    <img src="images/global-map.jpg" alt="World map highlighting Development Molecule client regions" loading="lazy" width="1600" height="900" class="bg-map">
+    <div class="container relative">
+      <div class="grid-12 items-center">
+        <div class="col-6">
+          <div class="reveal">
+            <p class="eyebrow text-accent">Global footprint</p>
+            <h2 style="margin-top:1rem;font-size:2.25rem;font-weight:700;line-height:1.15;color:var(--navy-fg)">Trusted by businesses across five countries</h2>
+            <p style="margin-top:1.25rem;max-width:36rem;color:var(--navy-fg-75)">With delivery centres in Noida and Mumbai and a business presence in Chicago, we support clients across India, the USA, UK, Canada and Germany with overlapping working hours and local commercial support.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="grid-3">
+            <div class="reveal">
+              <div class="navy-card">
+                <svg><use href="#icon-building"/></svg>
+                <h3>3 offices</h3>
+                <p>Noida, Mumbai and Chicago</p>
+              </div>
+            </div>
+            <div class="reveal" style="transition-delay:90ms">
+              <div class="navy-card">
+                <svg><use href="#icon-users"/></svg>
+                <h3>Dedicated teams</h3>
+                <p>Full-time resources on your roadmap</p>
+              </div>
+            </div>
+            <div class="reveal" style="transition-delay:180ms">
+              <div class="navy-card">
+                <svg><use href="#icon-badge-check"/></svg>
+                <h3>Since 2018</h3>
+                <p>Consistent delivery track record</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= CAPABILITIES ========= -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Depth across the modern technology stack</h2>
+          <p>Cloud-native engineering, applied AI, connected hardware and demand generation — delivered by one team.</p>
+        </div>
+      </div>
+      <div class="grid-4 mt-12">
+        <div class="reveal">
+          <div class="feature-card">
+            <div class="icon-wrap"><svg><use href="#icon-boxes"/></svg></div>
+            <h3>Platform engineering</h3>
+            <p>APIs, micro-services, data pipelines and cloud infrastructure.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:70ms">
+          <div class="feature-card">
+            <div class="icon-wrap"><svg><use href="#icon-brain-circuit"/></svg></div>
+            <h3>Applied AI</h3>
+            <p>Copilots, retrieval systems, document intelligence and automation.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:140ms">
+          <div class="feature-card">
+            <div class="icon-wrap"><svg><use href="#icon-cpu"/></svg></div>
+            <h3>IoT &amp; integration</h3>
+            <p>Firmware, gateways and device-to-cloud platforms.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:210ms">
+          <div class="feature-card">
+            <div class="icon-wrap"><svg><use href="#icon-rocket"/></svg></div>
+            <h3>Growth marketing</h3>
+            <p>SEO, PPC, SMO plus AEO and GEO for AI-era discovery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= CTA BAND ========= -->
+  <section class="cta-band">
+    <div class="cta-band-inner surface-navy">
+      <img src="images/pattern-navy.jpg" alt="" class="cta-band-bg" loading="lazy">
+      <div class="cta-band-content reveal">
+        <div>
+          <p class="eyebrow">Start the conversation</p>
+          <h2>Tell us the outcome. We'll engineer the path to it.</h2>
+          <p>Book a free 30-minute consultation with a senior consultant and leave with a clear technical direction — no obligation.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="contact.html" class="btn btn-accent">Get a Free Consultation <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+          <a href="services.html" class="btn btn-outline">Explore Our Services <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========= FOOTER ========= -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="images/logo-development-molecule.png" alt="Development Molecule logo" width="1200" height="282" loading="lazy">
+        <p>Since 2018, Development Molecule has delivered research-based software, AI and digital growth solutions for businesses across India, the USA, UK, Canada and Germany.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/developmentmolecule#" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile"><svg class="icon-md"><use href="#icon-facebook"/></svg></a>
+          <a href="https://www.linkedin.com/company/development-molecule/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg class="icon-md"><use href="#icon-linkedin"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3 class="eyebrow text-accent">Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="eyebrow text-accent">Services</h3>
+        <ul>
+          <li><a href="services/custom-development.html">Custom Development</a></li>
+          <li><a href="services/ai-custom-development.html">AI + Custom Development</a></li>
+          <li><a href="services/ai-best-development.html">AI Based Development</a></li>
+          <li><a href="services/digital-marketing-solutions.html">Digital Marketing Solutions</a></li>
+          <li><a href="services/staff-augmentation.html">Staff Augmentation</a></li>
+          <li><a href="services/digital-transformation.html">Digital Transformation</a></li>
+          <li><a href="services/hardware-software-integration-iot.html">Hardware &amp; Software Integration (IoT)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="eyebrow text-accent">Offices</h3>
+        <div class="footer-office"><svg class="icon-md"><use href="#icon-map-pin"/></svg><span><span class="office-label">Head Office — India</span><span class="office-line">Development Molecule, Z Block, Sector 12</span><span class="office-line">Noida, Uttar Pradesh, Delhi NCR – 201301</span></span></div>
+        <div class="footer-office"><svg class="icon-md"><use href="#icon-map-pin"/></svg><span><span class="office-label">Office — India</span><span class="office-line">Bhiwandi, Mumbai</span><span class="office-line">Maharashtra – 421320</span></span></div>
+        <div class="footer-office"><svg class="icon-md"><use href="#icon-map-pin"/></svg><span><span class="office-label">Office — USA</span><span class="office-line">8444 S Luella Ave</span><span class="office-line">Chicago, Illinois 60617</span></span></div>
+        <div class="footer-contact">
+          <a href="tel:+918169659377"><svg class="icon-md"><use href="#icon-phone"/></svg> +91 8169659377</a>
+          <a href="mailto:info@developmentmolecule.com"><svg class="icon-md"><use href="#icon-mail"/></svg> info@developmentmolecule.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Development Molecule. All rights reserved.</p>
+      <a href="contact.html">Talk to an Expert <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

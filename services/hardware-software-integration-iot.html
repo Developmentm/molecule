@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware &amp; Software Integration (IoT) | Development Molecule</title>
+  <meta name="description" content="Connected devices, gateways, firmware and dashboards delivered as one system.">
+  <meta property="og:title" content="Hardware &amp; Software Integration (IoT) | Development Molecule">
+  <meta property="og:description" content="Connected devices, gateways, firmware and dashboards delivered as one system.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+  <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+</svg>
+
+<!-- ========= HEADER ========= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo" aria-label="Development Molecule home">
+      <img src="../images/logo-development-molecule.png" alt="Development Molecule logo" width="1200" height="282">
+    </a>
+    <nav class="desktop-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../about.html" class="nav-link">About Us</a>
+      <div class="services-dropdown">
+        <a href="../services.html" class="nav-link active">Services <svg class="icon-sm"><use href="#icon-chevron-down"/></svg></a>
+        <div class="services-dropdown-menu">
+          <a href="custom-development.html">Custom Development</a>
+          <a href="ai-custom-development.html">AI + Custom Development</a>
+          <a href="ai-best-development.html">AI Based Development</a>
+          <a href="digital-marketing-solutions.html">Digital Marketing Solutions</a>
+          <a href="staff-augmentation.html">Staff Augmentation</a>
+          <a href="digital-transformation.html">Digital Transformation</a>
+          <a href="hardware-software-integration-iot.html">Hardware &amp; Software Integration (IoT)</a>
+        </div>
+      </div>
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <a href="tel:+918169659377" class="header-phone">
+      <svg class="icon-md"><use href="#icon-phone"/></svg> +91 8169659377
+    </a>
+    <a href="../contact.html" class="header-cta">
+      Get Free Consultation <svg class="icon-md"><use href="#icon-arrow-right"/></svg>
+    </a>
+    <button type="button" class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="24" height="24"><use href="#icon-menu"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About Us</a>
+    <a href="../services.html">Services</a>
+    <div class="mobile-sub">
+      <a href="custom-development.html">Custom Development</a>
+      <a href="ai-custom-development.html">AI + Custom Development</a>
+      <a href="ai-best-development.html">AI Based Development</a>
+      <a href="digital-marketing-solutions.html">Digital Marketing Solutions</a>
+      <a href="staff-augmentation.html">Staff Augmentation</a>
+      <a href="digital-transformation.html">Digital Transformation</a>
+      <a href="hardware-software-integration-iot.html">Hardware &amp; Software Integration (IoT)</a>
+    </div>
+    <a href="../blog.html">Blog</a>
+    <a href="../contact.html">Contact</a>
+    <a href="tel:+918169659377" class="mobile-phone">
+      <svg class="icon-md"><use href="#icon-phone"/></svg> +91 8169659377
+    </a>
+    <a href="../contact.html" class="mobile-cta">
+      Get Free Consultation <svg class="icon-md"><use href="#icon-arrow-right"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ========= HERO ========= -->
+  <section class="hero surface-navy">
+    <div class="blob animate-drift" style="left:-5rem;top:6rem;width:16rem;height:16rem;background:rgba(47,180,201,0.2)"></div>
+    <div class="hero-grid" style="position:relative">
+      <div>
+        <div class="reveal">
+          <p class="eyebrow text-accent">Hardware &amp; Software Integration (IoT)</p>
+          <h1 style="margin-top:1.25rem">Connected hardware, integrated end to end</h1>
+          <p class="hero-body">Connected devices, gateways, firmware and dashboards delivered as one system.</p>
+          <div class="hero-actions">
+            <a href="../contact.html" class="btn btn-accent">Get a Free Consultation <svg class="icon-sm"><use href="#icon-arrow-right"/></svg></a>
+            <a href="tel:+918169659377" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:700;color:var(--navy-fg);transition:color 0.2s"><svg class="icon-md text-accent"><use href="#icon-phone"/></svg> +91 8169659377</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:120ms">
+        <div class="hero-image animate-float-slow">
+          <img src="../images/service-iot.jpg" alt="Hardware &amp; Software Integration (IoT) illustration" width="1200" height="900">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= WHAT'S INCLUDED ========= -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal section-heading">
+        <p class="eyebrow">What's included</p>
+        <h2>How our hardware &amp; software integration (IoT) engagement works</h2>
+        <p>We bridge the gap between physical devices and business software — sensors, controllers and gateways connected to secure cloud platforms with real-time dashboards, alerting and analytics your operations team can rely on.</p>
+      </div>
+      <div class="grid-3 mt-12">
+        <div class="reveal card hover-lift" style="transition-delay:0ms">
+          <h3 style="font-size:1.125rem;font-weight:700">Device &amp; firmware</h3>
+          <p style="margin-top:0.75rem;font-size:0.875rem;line-height:1.7;color:var(--muted-fg)">Sensor selection, embedded firmware and edge processing logic.</p>
+        </div>
+        <div class="reveal card hover-lift" style="transition-delay:70ms">
+          <h3 style="font-size:1.125rem;font-weight:700">Connectivity</h3>
+          <p style="margin-top:0.75rem;font-size:0.875rem;line-height:1.7;color:var(--muted-fg)">MQTT, BLE, LoRa, Wi-Fi and cellular gateway integration.</p>
+        </div>
+        <div class="reveal card hover-lift" style="transition-delay:140ms">
+          <h3 style="font-size:1.125rem;font-weight:700">Cloud platform</h3>
+          <p style="margin-top:0.75rem;font-size:0.875rem;line-height:1.7;color:var(--muted-fg)">Ingestion pipelines, device registry, provisioning and OTA updates.</p>
+        </div>
+        <div class="reveal card hover-lift" style="transition-delay:210ms">
+          <h3 style="font-size:1.125rem;font-weight:700">Dashboards &amp; alerts</h3>
+          <p style="margin-top:0.75rem;font-size:0.875rem;line-height:1.7;color:var(--muted-fg)">Real-time monitoring, thresholds, escalation and historical analytics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= BENEFITS + PROCESS ========= -->
+  <section class="section bg-secondary-50">
+    <div class="container">
+      <div class="detail-two-col" style="align-items:center">
+        <div>
+          <div class="reveal section-heading">
+            <p class="eyebrow">Value delivered</p>
+            <h2>What you get from working with us</h2>
+          </div>
+          <div style="margin-top:2.25rem">
+            <div class="reveal benefit-item" style="margin-bottom:1rem;transition-delay:0ms">
+              <svg class="icon-lg"><use href="#icon-check"/></svg>
+              One accountable partner for hardware and software
+            </div>
+            <div class="reveal benefit-item" style="margin-bottom:1rem;transition-delay:60ms">
+              <svg class="icon-lg"><use href="#icon-check"/></svg>
+              Secure provisioning and over-the-air updates
+            </div>
+            <div class="reveal benefit-item" style="margin-bottom:1rem;transition-delay:120ms">
+              <svg class="icon-lg"><use href="#icon-check"/></svg>
+              Real-time operational visibility across sites
+            </div>
+            <div class="reveal benefit-item" style="margin-bottom:1rem;transition-delay:180ms">
+              <svg class="icon-lg"><use href="#icon-check"/></svg>
+              Scales from pilot deployment to full fleet
+            </div>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:120ms">
+          <p class="eyebrow text-accent">Our process</p>
+          <div style="margin-top:1.5rem">
+            <div class="process-step-inline" style="margin-bottom:1.25rem">
+              <span class="step-num">01</span>
+              <div>
+                <h3>Discovery &amp; research</h3>
+                <p>We study your market, users and workflows to define what the product must do.</p>
+              </div>
+            </div>
+            <div class="process-step-inline" style="margin-bottom:1.25rem">
+              <span class="step-num">02</span>
+              <div>
+                <h3>Architecture &amp; planning</h3>
+                <p>Technical design, stack selection and a milestone-based delivery plan.</p>
+              </div>
+            </div>
+            <div class="process-step-inline" style="margin-bottom:1.25rem">
+              <span class="step-num">03</span>
+              <div>
+                <h3>Build &amp; iterate</h3>
+                <p>Two-week sprints with weekly demos, QA gates and continuous integration.</p>
+              </div>
+            </div>
+            <div class="process-step-inline" style="margin-bottom:1.25rem">
+              <span class="step-num">04</span>
+              <div>
+                <h3>Launch &amp; scale</h3>
+                <p>Production deployment, monitoring, documentation hand-over and ongoing support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= RELATED SERVICES ========= -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="reveal section-heading">
+        <p class="eyebrow">Related services</p>
+        <h2>Combine capabilities into one roadmap</h2>
+      </div>
+      <div class="grid-3 mt-12">
+        <div class="reveal" style="transition-delay:0ms">
+          <a href="custom-development.html" class="related-card hover-lift">
+            <h3>Custom Development</h3>
+            <p>Research-led web, mobile and platform engineering built around your exact business logic.</p>
+            <span class="learn-more">View service <svg class="icon-sm"><use href="#icon-arrow-right"/></svg></span>
+          </a>
+        </div>
+        <div class="reveal" style="transition-delay:70ms">
+          <a href="ai-custom-development.html" class="related-card hover-lift">
+            <h3>AI + Custom Development</h3>
+            <p>Custom products with practical AI at the core — copilots, automation and intelligent workflows.</p>
+            <span class="learn-more">View service <svg class="icon-sm"><use href="#icon-arrow-right"/></svg></span>
+          </a>
+        </div>
+        <div class="reveal" style="transition-delay:140ms">
+          <a href="digital-transformation.html" class="related-card hover-lift">
+            <h3>Digital Transformation</h3>
+            <p>Modernise legacy systems, automate operations and unlock the data you already own.</p>
+            <span class="learn-more">View service <svg class="icon-sm"><use href="#icon-arrow-right"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= CTA BAND ========= -->
+  <section class="cta-band">
+    <div class="cta-band-inner surface-navy">
+      <img src="../images/pattern-navy.jpg" alt="" aria-hidden="true" loading="lazy" class="cta-band-bg">
+      <div class="cta-band-content">
+        <div>
+          <p class="eyebrow text-accent">Next step</p>
+          <h2>Ready to scope your hardware &amp; software integration (IoT) project?</h2>
+          <p>Book a free consultation and we'll outline approach, effort and timelines in writing.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="../contact.html" class="btn btn-accent">Get a Free Consultation <svg class="icon-sm"><use href="#icon-arrow-right"/></svg></a>
+          <a href="../services.html" class="btn btn-outline">All services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========= FOOTER ========= -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="../images/logo-development-molecule.png" alt="Development Molecule logo" width="1200" height="282" loading="lazy">
+        <p>Since 2018, Development Molecule has delivered research-based software, AI and digital growth solutions for businesses across India, the USA, UK, Canada and Germany.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/developmentmolecule#" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile"><svg class="icon-md"><use href="#icon-facebook"/></svg></a>
+          <a href="https://www.linkedin.com/company/development-molecule/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg class="icon-md"><use href="#icon-linkedin"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3 class="eyebrow text-accent">Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="eyebrow text-accent">Services</h3>
+        <ul>
+          <li><a href="custom-development.html">Custom Development</a></li>
+          <li><a href="ai-custom-development.html">AI + Custom Development</a></li>
+          <li><a href="ai-best-development.html">AI Based Development</a></li>
+          <li><a href="digital-marketing-solutions.html">Digital Marketing Solutions</a></li>
+          <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+          <li><a href="digital-transformation.html">Digital Transformation</a></li>
+          <li><a href="hardware-software-integration-iot.html">Hardware &amp; Software Integration (IoT)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="eyebrow text-accent">Offices</h3>
+        <div class="footer-office"><svg class="icon-md"><use href="#icon-map-pin"/></svg><span><span class="office-label">Head Office — India</span><span class="office-line">Development Molecule, Z Block, Sector 12</span><span class="office-line">Noida, Uttar Pradesh, Delhi NCR – 201301</span></span></div>
+        <div class="footer-office"><svg class="icon-md"><use href="#icon-map-pin"/></svg><span><span class="office-label">Office — India</span><span class="office-line">Bhiwandi, Mumbai</span><span class="office-line">Maharashtra – 421320</span></span></div>
+        <div class="footer-office"><svg class="icon-md"><use href="#icon-map-pin"/></svg><span><span class="office-label">Office — USA</span><span class="office-line">8444 S Luella Ave</span><span class="office-line">Chicago, Illinois 60617</span></span></div>
+        <div class="footer-contact">
+          <a href="tel:+918169659377"><svg class="icon-md"><use href="#icon-phone"/></svg> +91 8169659377</a>
+          <a href="mailto:info@developmentmolecule.com"><svg class="icon-md"><use href="#icon-mail"/></svg> info@developmentmolecule.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Development Molecule. All rights reserved.</p>
+      <a href="../contact.html">Talk to an Expert <svg class="icon-md"><use href="#icon-arrow-right"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
