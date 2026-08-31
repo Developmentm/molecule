@@ -31,6 +31,20 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   }
 
+  // ========= WHATSAPP FLOATING BUTTON =========
+  (function(){
+    var waNumber='918169659377';
+    var waMessage=encodeURIComponent("Hi Development Molecule team, I'd like to know more about your services.");
+    var waLink=document.createElement('a');
+    waLink.href='https://wa.me/'+waNumber+'?text='+waMessage;
+    waLink.target='_blank';
+    waLink.rel='noopener noreferrer';
+    waLink.className='whatsapp-float';
+    waLink.setAttribute('aria-label','Chat with us on WhatsApp');
+    waLink.innerHTML='<svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.362.687 4.564 1.872 6.417L4 29l7.786-1.83A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.818c-1.94 0-3.75-.53-5.302-1.452l-.38-.225-4.62 1.086 1.11-4.51-.248-.396A9.77 9.77 0 0 1 5.19 15c0-5.968 4.85-10.818 10.814-10.818S26.818 9.032 26.818 15 22.968 24.818 16.004 24.818zm5.99-8.146c-.328-.164-1.94-.957-2.24-1.066-.3-.11-.518-.164-.737.164-.219.328-.845 1.066-1.036 1.285-.19.219-.382.246-.71.082-.328-.164-1.386-.51-2.64-1.628-.976-.87-1.635-1.945-1.826-2.273-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.19.219-.328.328-.547.11-.219.055-.41-.027-.574-.082-.164-.737-1.778-1.01-2.434-.266-.64-.537-.553-.737-.563l-.628-.011c-.219 0-.574.082-.874.41-.3.328-1.147 1.12-1.147 2.735 0 1.614 1.174 3.174 1.338 3.393.164.219 2.31 3.527 5.596 4.945.782.338 1.393.54 1.869.69.785.25 1.5.215 2.065.13.63-.094 1.94-.793 2.213-1.558.273-.766.273-1.422.191-1.559-.082-.137-.3-.219-.628-.383z"/></svg>';
+    document.body.appendChild(waLink);
+  })();
+
   // ========= REVEAL ANIMATIONS =========
   if('IntersectionObserver' in window){
     var reveals=document.querySelectorAll('.reveal');
@@ -165,15 +179,24 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 
     // Submit button
-    if(submitBtn) submitBtn.addEventListener('click',function(){
-      var codeInput=wizard.querySelector('[name="code"]');
-      if(codeInput){
-        form.code=codeInput.value.replace(/\D/g,'');
-        if(form.code!==otp){
-          setError('code','The confirmation code doesn\'t match. Please re-enter it.');
-          return;
-        }
-      }
+    var NOTIFY_EMAIL='offcourseunderstoodyou@gmail.com';
+
+    function mailtoFallback(){
+      var body=[
+        'Name: '+form.name,
+        'Company: '+form.company,
+        'Email: '+form.email,
+        'Phone: '+form.phone,
+        'Service: '+form.service,
+        'Budget: '+form.budget,
+        'Timeline: '+form.timeline,
+        '',
+        form.message
+      ].join('\n');
+      return 'mailto:'+NOTIFY_EMAIL+'?subject='+encodeURIComponent('New enquiry from developmentmolecule.com — '+form.name)+'&body='+encodeURIComponent(body);
+    }
+
+    function showSuccess(){
       if(wizardForm) wizardForm.style.display='none';
       if(successPanel){
         successPanel.style.display='block';
@@ -184,6 +207,49 @@ document.addEventListener('DOMContentLoaded',function(){
         var serviceEl=successPanel.querySelector('.success-service');
         if(serviceEl) serviceEl.textContent=form.service.toLowerCase();
       }
+    }
+
+    if(submitBtn) submitBtn.addEventListener('click',function(){
+      var codeInput=wizard.querySelector('[name="code"]');
+      if(codeInput){
+        form.code=codeInput.value.replace(/\D/g,'');
+        if(form.code!==otp){
+          setError('code','The confirmation code doesn\'t match. Please re-enter it.');
+          return;
+        }
+      }
+
+      var originalLabel=submitBtn.textContent;
+      submitBtn.disabled=true;
+      submitBtn.textContent='Sending...';
+
+      var fd=new FormData();
+      fd.append('Name',form.name);
+      fd.append('Company',form.company);
+      fd.append('Email',form.email);
+      fd.append('Phone',form.phone);
+      fd.append('Service',form.service);
+      fd.append('Budget',form.budget);
+      fd.append('Timeline',form.timeline);
+      fd.append('Message',form.message);
+      fd.append('_subject','New enquiry from developmentmolecule.com — '+form.name);
+      fd.append('_replyto',form.email);
+
+      fetch('https://formspree.io/'+NOTIFY_EMAIL,{
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:fd
+      }).then(function(res){
+        submitBtn.disabled=false;
+        submitBtn.textContent=originalLabel;
+        if(!res.ok){ window.location.href=mailtoFallback(); }
+        showSuccess();
+      }).catch(function(){
+        submitBtn.disabled=false;
+        submitBtn.textContent=originalLabel;
+        window.location.href=mailtoFallback();
+        showSuccess();
+      });
     });
 
     // Reset

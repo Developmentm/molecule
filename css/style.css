@@ -43,6 +43,7 @@
 }
 
 html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
 
 body{
   background:var(--bg);
@@ -823,12 +824,13 @@ textarea.wizard-input{min-height:8rem;resize:vertical}
 .wizard-review dl{margin-top:1rem}
 .wizard-review dl>div{
   display:flex;
+  flex-wrap:wrap;
   justify-content:space-between;
-  gap:1rem;
+  gap:0.25rem 1rem;
   padding:0.3rem 0;
 }
 .wizard-review dt{font-size:0.875rem;color:var(--muted-fg)}
-.wizard-review dd{font-size:0.875rem;font-weight:600;text-align:right}
+.wizard-review dd{font-size:0.875rem;font-weight:600;text-align:right;word-break:break-word;max-width:100%}
 .wizard-review .message{
   margin-top:1rem;
   padding-top:1rem;
@@ -1172,3 +1174,40 @@ textarea.wizard-input{min-height:8rem;resize:vertical}
 /* Service detail benefit/process combined */
 .detail-two-col{display:grid;gap:3.5rem}
 @media(min-width:1024px){.detail-two-col{grid-template-columns:1fr 1fr}}
+
+/* ========= WHATSAPP FLOAT BUTTON ========= */
+.whatsapp-float{
+  position:fixed;
+  right:1.25rem;
+  bottom:calc(1.25rem + env(safe-area-inset-bottom));
+  z-index:60;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:3.5rem;
+  height:3.5rem;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  box-shadow:0 10px 30px -10px rgba(0,0,0,0.5);
+  transition:transform 0.2s ease;
+}
+.whatsapp-float:hover{transform:scale(1.08)}
+.whatsapp-float svg{width:1.75rem;height:1.75rem}
+@media(max-width:639px){
+  .whatsapp-float{
+    right:1rem;
+    bottom:calc(1rem + env(safe-area-inset-bottom));
+    width:3.125rem;
+    height:3.125rem;
+  }
+  .whatsapp-float svg{width:1.5rem;height:1.5rem}
+}
+
+/* ========= EXTRA MOBILE POLISH ========= */
+@media(max-width:380px){
+  .hero h1{font-size:1.875rem}
+  .container{padding-left:1rem;padding-right:1rem}
+  .wizard{padding:1.25rem}
+  .section-heading h2{font-size:1.5rem}
+}
