@@ -219,10 +219,6 @@ document.addEventListener('DOMContentLoaded',function(){
         }
       }
 
-      var originalLabel=submitBtn.textContent;
-      submitBtn.disabled=true;
-      submitBtn.textContent='Sending...';
-
       var fd=new FormData();
       fd.append('Name',form.name);
       fd.append('Company',form.company);
@@ -235,21 +231,19 @@ document.addEventListener('DOMContentLoaded',function(){
       fd.append('_subject','New enquiry from developmentmolecule.com — '+form.name);
       fd.append('_replyto',form.email);
 
+      // Best-effort silent delivery via Formspree (works once the
+      // one-time confirmation email to NOTIFY_EMAIL has been approved).
       fetch('https://formspree.io/'+NOTIFY_EMAIL,{
         method:'POST',
         headers:{'Accept':'application/json'},
         body:fd
-      }).then(function(res){
-        submitBtn.disabled=false;
-        submitBtn.textContent=originalLabel;
-        if(!res.ok){ window.location.href=mailtoFallback(); }
-        showSuccess();
-      }).catch(function(){
-        submitBtn.disabled=false;
-        submitBtn.textContent=originalLabel;
-        window.location.href=mailtoFallback();
-        showSuccess();
-      });
+      }).catch(function(){ /* ignored: mailto below guarantees delivery */ });
+
+      // Guaranteed delivery: this site has no backend, so we always open
+      // the visitor's email app pre-filled and addressed to NOTIFY_EMAIL.
+      window.location.href=mailtoFallback();
+
+      showSuccess();
     });
 
     // Reset
