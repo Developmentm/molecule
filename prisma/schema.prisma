@@ -1,0 +1,210 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  SUBADMIN
+  LAWYER
+}
+
+enum Designation {
+  LAWYER
+  PARTNER
+  ASSOCIATE_PARTNER
+}
+
+enum MatterStatus {
+  OPEN
+  ON_HOLD
+  CLOSED
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  OVERDUE
+}
+
+enum LeaveStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(SUBADMIN)
+  active       Boolean  @default(true)
+  lawyer       Lawyer?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Location {
+  id        String   @id @default(cuid())
+  name      String
+  address   String?
+  matters   Matter[]
+  createdAt DateTime @default(now())
+}
+
+model Holiday {
+  id        String   @id @default(cuid())
+  name      String
+  date      DateTime
+  createdAt DateTime @default(now())
+}
+
+model Lawyer {
+  id          String       @id @default(cuid())
+  name        String
+  email       String       @unique
+  phone       String?
+  barNumber   String?
+  designation Designation  @default(LAWYER)
+  hourlyRate  Float        @default(0)
+  inCharge    Boolean      @default(false)
+  active      Boolean      @default(true)
+  userId      String?      @unique
+  user        User?        @relation(fields: [userId], references: [id])
+  matters     MatterLawyer[]
+  timeRecords TimeRecord[]
+  leaves      Leave[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Client {
+  id        String   @id @default(cuid())
+  name      String
+  email     String?
+  phone     String?
+  address   String?
+  company   String?
+  notes     String?
+  matters   Matter[]
+  invoices  Invoice[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Matter {
+  id           String         @id @default(cuid())
+  caseNumber   String         @unique
+  title        String
+  description  String?
+  status       MatterStatus   @default(OPEN)
+  clientId     String
+  client       Client         @relation(fields: [clientId], references: [id])
+  locationId   String?
+  location     Location?      @relation(fields: [locationId], references: [id])
+  openDate     DateTime       @default(now())
+  closeDate    DateTime?
+  billingRate  Float?
+  lawyers      MatterLawyer[]
+  timeRecords  TimeRecord[]
+  disbursements Disbursement[]
+  invoices     Invoice[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model MatterLawyer {
+  id       String @id @default(cuid())
+  matterId String
+  matter   Matter @relation(fields: [matterId], references: [id], onDelete: Cascade)
+  lawyerId String
+  lawyer   Lawyer @relation(fields: [lawyerId], references: [id], onDelete: Cascade)
+
+  @@unique([matterId, lawyerId])
+}
+
+model TimeRecord {
+  id          String   @id @default(cuid())
+  matterId    String
+  matter      Matter   @relation(fields: [matterId], references: [id])
+  lawyerId    String
+  lawyer      Lawyer   @relation(fields: [lawyerId], references: [id])
+  date        DateTime @default(now())
+  hours       Float
+  rate        Float
+  description String
+  billable    Boolean  @default(true)
+  invoiced    Boolean  @default(false)
+  invoiceItem InvoiceItem?
+  createdAt   DateTime @default(now())
+}
+
+model Disbursement {
+  id          String   @id @default(cuid())
+  matterId    String
+  matter      Matter   @relation(fields: [matterId], references: [id])
+  date        DateTime @default(now())
+  description String
+  amount      Float
+  invoiced    Boolean  @default(false)
+  invoiceItem InvoiceItem?
+  createdAt   DateTime @default(now())
+}
+
+model Invoice {
+  id            String        @id @default(cuid())
+  invoiceNumber String        @unique
+  clientId      String
+  client        Client        @relation(fields: [clientId], references: [id])
+  matterId      String
+  matter        Matter        @relation(fields: [matterId], references: [id])
+  status        InvoiceStatus @default(DRAFT)
+  issueDate     DateTime      @default(now())
+  dueDate       DateTime
+  notes         String?
+  items         InvoiceItem[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model InvoiceItem {
+  id             String        @id @default(cuid())
+  invoiceId      String
+  invoice        Invoice       @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  description    String
+  quantity       Float
+  rate           Float
+  amount         Float
+  timeRecordId   String?       @unique
+  timeRecord     TimeRecord?   @relation(fields: [timeRecordId], references: [id])
+  disbursementId String?       @unique
+  disbursement   Disbursement? @relation(fields: [disbursementId], references: [id])
+}
+
+model Leave {
+  id        String      @id @default(cuid())
+  lawyerId  String
+  lawyer    Lawyer      @relation(fields: [lawyerId], references: [id])
+  startDate DateTime
+  endDate   DateTime
+  type      String      @default("Casual")
+  reason    String?
+  status    LeaveStatus @default(PENDING)
+  createdAt DateTime    @default(now())
+}
+
+model FirmSettings {
+  id            String  @id @default("singleton")
+  firmName      String  @default("My Law Firm")
+  address       String?
+  phone         String?
+  email         String?
+  defaultRate   Float   @default(0)
+  invoicePrefix String  @default("INV")
+}
